@@ -1,0 +1,16 @@
+div{
+	border: 2px solid black;
+	width: 100px;
+	height: 200px;
+}
+
+#logo {
+  font-size: 45px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+section{
+	display: none;
+}

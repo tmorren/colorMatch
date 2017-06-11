@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tyler S. Morren | Color Match</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<h1 id="logo">colorMATCH</h1>
+
+	<section id="startScreen">
+		<button class="startButton">Test</button>
+	</section>
+
+	<section id="gameScreen">
+		<h3 id="gameScreenScore"></h3>
+		<h3 id="gameTimer"></h3>
+
+		<div id="matchColor">
+		</div>
+
+
+		<div id="playerColor">
+		</div>
+
+		<input type="range" min="0" max="255" step="1" value="0" id="playerRed">
+		<input type="range" min="0" max="255" step="1" value="0" id="playerGreen">
+		<input type="range" min="0" max="255" step="1" value="0" id="playerBlue">
+	</section>
+	
+	<section id="endScreen">
+		<h4>Game over</h4>
+		<button class="startButton">Start New Game</button>
+	</section>
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
