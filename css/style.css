@@ -1,3 +1,7 @@
+/**************************
+	General Styling
+**************************/
+
 * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -6,9 +10,10 @@
 
 body{
 	background: #67B26F;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to left, #4ca2cd, #67B26F);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to left, #4ca2cd, #67B26F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(135deg, #4ca2cd 0%, #67B26F 100%);  /* Chrome 10-25, Safari 5.1-6 */
+	background-image: linear-gradient(135deg, #4ca2cd 0%, #67B26F 100%); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
 }
 
 .color{
@@ -35,25 +40,46 @@ section{
 	box-shadow: 4px 4px 10px #737373;
 }
 
+/************************
+	Home Screen
+*************************/
+#startScreen{
+	line-height: 1.5em;
+}
+
+/************************
+	Game Screen
+*************************/
+#scoreBox, #timeBox{
+	text-align: center;
+    font-size: 18px;
+    padding: .25em;
+}
+
 .userInputs{
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 }
 
 .userInputs label{
 	display: inline-block;
 	width: 20%;
+	float: left;
 }
 
-.userInputs input[type="number"]{
-	width: 50px;
-	text-align: center;
+.userInputs input[type="text"]{
+	width: 37px;
 	margin: auto;
+	background: #d2d2d2;
+	float: right;
+	border: 1px solid #b9b9b9;
 }
 
 .userInputs input{
 	margin-right: 2em;
+	text-align: center;
 }
 
 button{

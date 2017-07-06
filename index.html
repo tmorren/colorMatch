@@ -3,6 +3,7 @@
 <head>
 	<title>Tyler S. Morren | Color Match</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -10,20 +11,22 @@
 	<h1 id="logo">colorMATCH</h1>
 
 	<section id="startScreen">
-		<p>Welcome to colorMatch! The goal of the game is to change the RGB values of the bottom color so that it matches the top color. See how many you can get in 60 seconds! to get start, click the button below!</p>
+		<p><strong>Welcome to colorMatch!</strong></p> 
+
+		<p>The goal of the game is to change the RGB values of the bottom color so that it matches the top color. See how many you can get in 60 seconds! To get started, click the button below!</p>
 		<button class="startButton">Start Game</button>
 	</section>
 
 	<section id="gameScreen">
-		<div>
+
+		<div id="scoreBox">
 			<span>Score: </span>
 			<span id="gameScreenScore"></span>
 		</div>
-		<div>
-			<span>Timer: </span>
+		<div id="timeBox">
+			<span>Time: </span>
 			<span id="gameTimer"></span>
 		</div>
-		
 
 		<div class="color" id="matchColor">
 		</div>
@@ -33,13 +36,13 @@
 		</div>
 
 		<div class="userInputs">
-			<label>Red</label><input type="range" min="0" max="255" step="1" value="0" id="playerRed"><input type="number" id="playerRedVal" disabled>
+			<label>Red</label><input type="range" min="0" max="255" step="1" value="0" id="playerRed"><input type="text" id="playerRedVal" disabled>
 		</div>
 		<div class="userInputs">
-			<label>Green</label><input type="range" min="0" max="255" step="1" value="0" id="playerGreen"><input type="number" id="playerGreenVal" disabled>
+			<label>Green</label><input type="range" min="0" max="255" step="1" value="0" id="playerGreen"><input type="text" id="playerGreenVal" disabled>
 		</div>
 		<div class="userInputs">
-			<label>Blue</label><input type="range" min="0" max="255" step="1" value="0" id="playerBlue"><input type="number" id="playerBlueVal" disabled>
+			<label>Blue</label><input type="range" min="0" max="255" step="1" value="0" id="playerBlue"><input type="text" id="playerBlueVal" disabled>
 		</div>
 		
 	</section>

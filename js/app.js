@@ -98,7 +98,7 @@ function newColor(){
 /* Checks to see if the color is a match. If it is, it will return 3 */
 function matchCheck(pR, pG, pB, mR, mG, mB){
 	check = 0;
-
+	
 	//Check to see if all the three colors are within ten of the match value
 	if (Math.abs(pR - mR) <= precision ) {
     	check++;
