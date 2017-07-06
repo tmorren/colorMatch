@@ -2,33 +2,51 @@
 <html>
 <head>
 	<title>Tyler S. Morren | Color Match</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<h1 id="logo">colorMATCH</h1>
 
 	<section id="startScreen">
-		<button class="startButton">Test</button>
+		<p>Welcome to colorMatch! The goal of the game is to change the RGB values of the bottom color so that it matches the top color. See how many you can get in 60 seconds! to get start, click the button below!</p>
+		<button class="startButton">Start Game</button>
 	</section>
 
 	<section id="gameScreen">
-		<h3 id="gameScreenScore"></h3>
-		<h3 id="gameTimer"></h3>
+		<div>
+			<span>Score: </span>
+			<span id="gameScreenScore"></span>
+		</div>
+		<div>
+			<span>Timer: </span>
+			<span id="gameTimer"></span>
+		</div>
+		
 
-		<div id="matchColor">
+		<div class="color" id="matchColor">
 		</div>
 
 
-		<div id="playerColor">
+		<div class="color" id="playerColor">
 		</div>
 
-		<input type="range" min="0" max="255" step="1" value="0" id="playerRed">
-		<input type="range" min="0" max="255" step="1" value="0" id="playerGreen">
-		<input type="range" min="0" max="255" step="1" value="0" id="playerBlue">
+		<div class="userInputs">
+			<label>Red</label><input type="range" min="0" max="255" step="1" value="0" id="playerRed"><input type="number" id="playerRedVal" disabled>
+		</div>
+		<div class="userInputs">
+			<label>Green</label><input type="range" min="0" max="255" step="1" value="0" id="playerGreen"><input type="number" id="playerGreenVal" disabled>
+		</div>
+		<div class="userInputs">
+			<label>Blue</label><input type="range" min="0" max="255" step="1" value="0" id="playerBlue"><input type="number" id="playerBlueVal" disabled>
+		</div>
+		
 	</section>
 	
 	<section id="endScreen">
-		<h4>Game over</h4>
+		<h2>Game over</h2>
+		<h3 id="finalScore"></h3>
 		<button class="startButton">Start New Game</button>
 	</section>
 

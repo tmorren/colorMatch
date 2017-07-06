@@ -26,10 +26,27 @@ class colorMatch{
 /* Function that executes when the start button is clicked */
 $(".startButton").click(function(){
 	score = 0;
-	count = 5;
-	$("#startScreen").fadeOut();
-	$("#endScreen").fadeOut();
-	$("#gameScreen").fadeIn();
+	count = 60;
+
+	currentScreen = $(this).parent().attr("id");
+
+	if (currentScreen == "startScreen") {
+		$("#startScreen").fadeOut(300, function() {
+			$("#gameScreen").fadeIn();
+		});
+	} else if (currentScreen == "endScreen") {
+		$("#endScreen").fadeOut(300, function() {
+			$("#gameScreen").fadeIn();
+		});
+	}
+
+	playerRed = $("#playerRed").val();
+	playerGreen = $("#playerGreen").val();
+	playerBlue = $("#playerBlue").val();
+	$("#playerRedVal").val(playerRed);
+	$("#playerGreenVal").val(playerGreen); 
+	$("#playerBlueVal").val(playerBlue);
+	
 	$("#gameScreenScore").html(score);
 	newColor();
 	document.getElementById("gameTimer").innerHTML = count; 
@@ -42,6 +59,10 @@ $('input[type=range]').on('input', function () {
 	playerGreen = $("#playerGreen").val();
 	playerBlue = $("#playerBlue").val();
 
+	$("#playerRedVal").val(playerRed);
+	$("#playerGreenVal").val(playerGreen); 
+	$("#playerBlueVal").val(playerBlue);
+
 	matchRed = instance.red;
 	matchGreen = instance.green;
 	matchBlue = instance.blue;
@@ -50,14 +71,12 @@ $('input[type=range]').on('input', function () {
 	$("#playerColor").css("background-color", "rgb(" + colorString + ")");
 
 	check = matchCheck(playerRed, playerGreen, playerBlue, matchRed, matchGreen, matchBlue);
-	console.log(check);
 	
 	if (check == 3) {
 		score++;
 		$("#gameScreenScore").html(score);
 		newColor();
 	}
-
 });
 
 function getRandomInt(min, max) {
@@ -97,17 +116,18 @@ function matchCheck(pR, pG, pB, mR, mG, mB){
 };
 
 /* Count down timer */
-    
-    
 function timer()
 {
     if (count <= 1)
     {
         clearInterval(counter);
-        $("#gameScreen").fadeOut();
-		$("#endScreen").fadeIn();
+        $("#gameScreen").fadeOut(300, function() {
+			$("#endScreen").fadeIn();
+			$("#finalScore").html("Final Score: " + score);
+		});
+		
         return;
-     }
-     count--;
-     document.getElementById("gameTimer").innerHTML= count; 
+    }
+    count--;
+    document.getElementById("gameTimer").innerHTML= count; 
  }
